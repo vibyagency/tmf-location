@@ -270,7 +270,7 @@ const EMPTY_RESULT_CLASS = "cpny-empty-result";
 
 const BASE_URL = `https://api.insee.fr/entreprises/sirene/V3/siret?q=`;
 const SORT_URL = `&tri= dateDernierTraitementUniteLegale desc`;
-const token = "3a163279-189c-3e80-a457-248b15309c33";
+const token = "QLpu45HqDLFqbuC2xgThKJIBAG8a";
 config = {
   headers: { Authorization: `Bearer ${token}` },
 };
