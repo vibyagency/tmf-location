@@ -342,7 +342,7 @@ class CompanyItem {
       </div>
     </div>
   </div>
-  <div class="form-devis_cpny-siret">${this.company.info.siret}</div>
+  <div class="form-devis_cpny-siret">SIRET : ${this.company.info.siret}</div>
     `;
 
     const newCardEl = document.createElement("div");
@@ -444,12 +444,14 @@ class FieldList {
   clickedCardHandler() {
     Tooltip.removeAllActiveCards();
     this.el.classList.add("is-active");
+    const entrepriseFieldsNodes = document.getElementById("entreprise-fields");
+    const entreprisefieldsArray = [...entrepriseFieldsNodes.children];
+    entreprisefieldsArray[0].value = this.company.info.companyName;
+    entreprisefieldsArray[1].value = this.company.address;
+    entreprisefieldsArray[2].value = this.company.info.siret;
+    entreprisefieldsArray[3].value = "";
+    entreprisefieldsArray[4].value = "";
     this.fieldsList.firstInput.el.value = this.company.info.companyName;
-    this.fieldsList.hiddenFields.siretField.value = this.company.info.siret;
-    this.fieldsList.hiddenFields.nameField.value =
-      this.company.info.companyName;
-    this.fieldsList.hiddenFields.addressField.value = this.company.address;
-    this.fieldsList.hiddenFields.sexeField.value = this.company.info.siret;
   }
 
   getQuery(e) {
